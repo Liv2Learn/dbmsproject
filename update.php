@@ -7,7 +7,7 @@ $dbname ="test";
  $name = $_POST['name'];
  $domain = $_POST['domain'];
  $yoe = $_POST['yoe'];
- $gender = $_POST['gender'];
+ 
  
  $conn = new mysqli($servername,$dbusername,$dbpassword,$dbname);
  
@@ -16,11 +16,10 @@ $dbname ="test";
 	 
  }
  
- $sql = "INSERT INTO doctor (name,domain,gender,yoe)
- VALUES ('$name','$domain','$gender','$yoe')";
+ $sql = "update doctor set domain='$domain',yoe='$yoe' where name='$name'";
  
  if ($conn->query($sql) === TRUE) {
-	 echo "<h1>Thank You!</h1>";
+	 echo "<h1>Record Updated!</h1>";
  } else {
 	 echo "Error: " , $sql . "<br>" . $conn->error;
 	 

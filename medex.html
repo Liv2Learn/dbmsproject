@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include('sample.php'); ?>
 <html lang="en">
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
@@ -64,6 +65,12 @@
     right: 10px;
     font-size: 50px; 
   }
+  .updateDoctor {
+     position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 50px; 
+  }
     </style>
   }
 </head>
@@ -71,7 +78,7 @@
  
 
 
-<?php include('sample.php'); ?>
+
 <!-- Navbar -->
 <nav class="navbar navbar-default">
   <div class="container">
@@ -102,7 +109,7 @@
 
 <!-- Second Container -->
 <div class="container-fluid bg-2 text-center">
-  <h3 class="margin">What Am I?</h3>
+  <h3 class="margin">About the website</h3>
   <p>This is a website made to facilitate the common process of finding the right doctor based on the needs of a person. We believe that the process, otherwise is no less than a debacle!
   To find the right doctor for your loved ones, start off by clicking the search button below  </p>
    <button type="button" class="btn btn-default btn-lg" id="myBtn">Search your doctor here</button>
@@ -110,23 +117,7 @@
 </div>
 
 <!-- Third Container (Grid) -->
-<div class="container-fluid bg-3 text-center">    
-  <h3 class="margin">Where To Find Me?</h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <p>write some crap</p>
-      <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <p>write some more crap</p>
-      <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <p>write more and more crap</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-  </div>
-</div>
+
  <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
@@ -146,16 +137,29 @@
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> years of experience</label>
               <input type="text" class="form-control" id="psw" name="yoe" placeholder="Enter years of experience">
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
+           
+			<div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Hospital Name</label>
+              <input type="text" class="form-control" id="hname" name="hname" placeholder="Enter Hospital Name ">
+            </div>
+			<div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Hospital Rating</label>
+              <input type="text" class="form-control" id="hrating" name="hrating" placeholder="Hospital Rating">
+            </div>
+			<div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Location</label>
+              <input type="text" class="form-control" id="loc" name="loc" placeholder="Location">
+            </div>
+			<div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Doctor Rating</label>
+              <input type="text" class="form-control" id="drating" name="drating" placeholder="Doctor Rating">
             </div>
               <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Search</button>
           </form>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>Not a member? <a href="#">Sign Up</a></p>
-          <p>Forgot <a href="#">Password?</a></p>
+         
         </div>
       </div>
       
@@ -189,16 +193,48 @@
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> years of experience</label>
               <input type="text" class="form-control" id="psw"  name="yoe" placeholder="Enter years of experience" required>
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
-            </div>
+            
               <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Save</button>
           </form>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>Not a member? <a href="#">Sign Up</a></p>
-          <p>Forgot <a href="#">Password?</a></p>
+          
+        </div>
+      </div>
+      </div>
+      </div>
+	  <div class = "updateDoctor">
+  <button type="button" class="btn btn-warning btn-lg" id="myBtn3">Update details</button>
+  </div> 
+  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+  <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Enter the new details here</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form" action="update.php" method="post">
+          <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Doctor name</label>
+              <input type="text" class="form-control" id="usrname" name="name" placeholder="Enter Doctor name" required>
+            </div>
+            <div class="form-group">
+              <label for="domain"><span class="glyphicon glyphicon-user"></span> Doctor designation</label>
+              <input type="text" class="form-control" id="usrname" name="domain" placeholder="Enter new designation" required>
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> years of experience</label>
+              <input type="text" class="form-control" id="psw"  name="yoe" placeholder="Enter years of experience" required>
+            </div>
+           
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Update </button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+         
         </div>
       </div>
       </div>
@@ -216,6 +252,11 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("#myBtn2").click(function(){
         $("#myModal2").modal();
+    });
+});
+$(document).ready(function(){
+    $("#myBtn3").click(function(){
+        $("#myModal3").modal();
     });
 });
 </script>
